@@ -41,12 +41,12 @@
       <div class="card-body p-0 w-full">
         <fieldset class="fieldset w-full">
           <label class="label font-medium text-[16px] text-[#3D3746]">Username</label>
-          <input type="email" class="input w-full" placeholder="Enter Username" />
+          <input value="admin" id="usernameInput" type="email" class="input w-full" placeholder="Enter Username" />
           <p class="text-[#4A00FF] text-[14px]">Default: admin</p>
           <label class="pt-2 label font-medium text-[16px] text-[#3D3746]">Password</label>
-          <input type="password" class="input w-full" placeholder="Enter Password" />
+          <input value="admin123" id="passwordInput" type="password" class="input w-full" placeholder="Enter Password" />
           <p class="text-[#4A00FF] text-[14px]">Default: admin123</p>
-          <button class="btn btn-primary mt-4 py-6 text-[16px] font-semibold">Sign In</button>
+          <button id="loginButton" class="btn btn-primary mt-4 py-6 text-[16px] font-semibold">Sign In</button>
         </fieldset>
       </div>
     </div>
@@ -68,8 +68,29 @@
     </div>
   </section>
 
+  <!-- Steps for login
+  1. eventlisener for sign in button
+  2. username & password dhore ano
+  3. if username and password correct > sand to homepage
+  4. else error alirt 
+  -->
+  <script>
+document.getElementById("loginButton").addEventListener("click", () => {
 
-  <script src="./script.js"></script>
+const username = document.getElementById("usernameInput").value;
+
+const password = document.getElementById("passwordInput").value;
+
+
+if (username == "admin" && password == "admin123") {
+  window.location.href = "/home.html";
+}
+else {
+  return alert("Pls enter a valid details")
+}
+
+})
+  </script>
 </body>
 
 </html>
