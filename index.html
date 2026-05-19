@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 5</title>
+  <title>Sign In</title>
   <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
 
   <!-- Font -->
@@ -26,8 +26,48 @@
 </style>
 </head>
 
-<body>
+<body class="bg-[#F8FAFC] py-20">
   
+  <section class="w-[520px] bg-white p-8 mx-auto rounded-lg shadow">
+    <div class="flex flex-col justify-center text-center gap-1">
+      <img class="w-[100px] pb-5 self-center" src="./assets/github-logo.png" alt="">
+      <h4 class="font-semibold text-[#1F2937] text-[24px]">GitHub Issues Tracker</h4>
+      <p class="text-[16px] text-[#64748B] ">Sign in to manage your issues</p>
+    </div>
+
+    <div class="hero mt-8">
+  <div class="hero-content flex-col justify-center w-full p-0">
+    <div class="card w-full">
+      <div class="card-body p-0 w-full">
+        <fieldset class="fieldset w-full">
+          <label class="label font-medium text-[16px] text-[#3D3746]">Username</label>
+          <input type="email" class="input w-full" placeholder="Enter Username" />
+          <p class="text-[#4A00FF] text-[14px]">Default: admin</p>
+          <label class="pt-2 label font-medium text-[16px] text-[#3D3746]">Password</label>
+          <input type="password" class="input w-full" placeholder="Enter Password" />
+          <p class="text-[#4A00FF] text-[14px]">Default: admin123</p>
+          <button class="btn btn-primary mt-4 py-6 text-[16px] font-semibold">Sign In</button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+    </div>
+
+    <div class="flex items-center gap-3 my-6 w-full">
+  <hr class="flex-1 border-gray-300">
+  <span class="">OR</span>
+  <hr class="flex-1 border-gray-300">
+</div>
+
+    <div class="text-center">
+      <p class="text-[#64748B] text-[14px]">Demo Credentials:</p>
+      <div class="bg-[#F8FAFC] py-6 flex flex-col items-center text-center mt-3">
+        <p><b>Username:</b> admin</p>
+        <p><b>Password:</b> admin123</p>
+      </div>
+    </div>
+  </section>
+
 
   <script src="./script.js"></script>
 </body>
