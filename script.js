@@ -5,6 +5,7 @@ const loadData = () => {
         .then(ok => ok.json())
         .then(data => {
             allTabsData(data.data);
+            // tagForBugs(data.data[0].labels);
         })
 
 }
@@ -45,9 +46,9 @@ const allTabsData = (datas) => {
         class="uppercase px-6 py-2.5 rounded-[100px] text-[14px]
             ${data.priority === "medium" ? "bg-[#FFF6D1] text-[#F59E0B]"
 
-            : data.priority === "low" ? "bg-[#EEEFF2] text-[#9CA3AF]"
+                : data.priority === "low" ? "bg-[#EEEFF2] text-[#9CA3AF]"
 
-            : "bg-[#FEECEC] text-[#EF4444]"}
+                    : "bg-[#FEECEC] text-[#EF4444]"}
         "> 
 
         ${data.priority}
@@ -63,11 +64,9 @@ const allTabsData = (datas) => {
         </div>
 
 
-        <div class="px-4 flex gap-2 pb-4 borderhr">
+        <div id="bugsContainer-${data.id}" class="px-4 flex flex-wrap gap-2 pb-4 borderhr">
 
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
+        ${tagForBugs(data.labels)}
 
         </div>
 
@@ -86,6 +85,40 @@ const allTabsData = (datas) => {
         cardsContainer.appendChild(newCard);
     }
 
+}
+
+const tagForBugs = (arr) => {
+const bugsSpan = arr.map(el => {
+  let style = "";
+  let icon = "";
+
+  if (el === "bug") {
+    style = "bg-[#FEECEC] text-[#EF4444] borderbug";
+    icon = "fa-bug";
+  } 
+  
+  else if (
+    el === "help wanted" ||
+    el === "documentation" ||
+    el === "good first issue"
+  ) {
+    style = "bg-[#FFF8DB] text-[#D97706] borderhelp";
+    icon = "fa-life-ring";
+  } 
+  
+  else if (el === "enhancement") {
+    style = "bg-[#DEFCE8] text-[#00A96E] borderenhancement";
+    icon = "fa-burst";
+  }
+
+  return `
+    <span class="uppercase px-4 py-1.5 rounded-[100px] text-[14px] ${style}">
+      <i class="pr-2 fa-solid ${icon}"></i>
+      ${el}
+    </span>
+  `;
+}).join("");
+return bugsSpan;
 }
 
 loadData()
