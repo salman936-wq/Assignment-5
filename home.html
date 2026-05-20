@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
+  <title>GitHub Issues Tracker</title>
   <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
 
   <!-- Font -->
@@ -34,6 +34,10 @@
 
     .openBorder {
       border-top: 3px solid #00A96E;
+    }
+
+    .closedBorder {
+      border-top: 3px solid #A855F7;
     }
 
     .borderhr {
@@ -123,212 +127,16 @@
         </ul>
       </div>
     </div>
+    <img src="./assets/Closed- Status .png" alt="">
 
-    <div class="bg-gray-200 grid  w-full md:p-6 p-3 rounded-b-lg gap-3 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+    <div id="cardsContainer" class="bg-gray-200 grid  w-full md:p-6 p-3 rounded-b-lg gap-3 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
 
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
-
-      <div class="bg-white openBorder rounded-sm py-4 flex flex-col gap-3">
-
-        <div class="px-4 flex justify-between items-center">
-          <img class="h-full w-10" src="./assets/Open-Status.png" alt="">
-          <span class="uppercase w-20 px-6 py-2.5 rounded-[100px] text-[14px] bg-[#FEECEC] text-[#EF4444]">High</span>
-        </div>
-        <div class="px-4">
-          <h4 class="text-[18px] font-semibold pb-1">Fix navigation menu on mobile devices</h4>
-          <p class="text-[#64748B] text-[14px]">The navigation menu doesn't collapse properly on mobile devices...</p>
-        </div>
-        <div class="px-4 flex gap-2 pb-4 borderhr">
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FEECEC] text-[#EF4444] borderbug text-[14px]"><i class="pr-2 fa-solid fa-bug"></i> Bug</span>
-
-          <span class="uppercase px-4 py-1.5 rounded-[100px] bg-[#FFF8DB] text-[#D97706] borderhelp text-[14px]"><i class="pr-2 fa-solid fa-life-ring"></i> Bug</span>
-
-        </div>
-        <div class="px-4">
-          <p class="text-[#64748B] text-[14px]">#1
-by john_doe</p>
-          <p class="text-[#64748B] text-[14px]">1/15/2024</p>
-        </div>
-
-      </div>
 
     </div>
 
   </section>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
