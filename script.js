@@ -5,7 +5,6 @@ const loadData = () => {
         .then(ok => ok.json())
         .then(data => {
             allTabsData(data.data);
-            // tagForBugs(data.data[0].labels);
         })
 
 }
@@ -13,22 +12,11 @@ const loadData = () => {
 const allTabsData = (datas) => {
 
     for (data of datas) {
+        const countTotal = document.getElementById("cardsContainer").children.length +1;
+        document.getElementById("count").innerText = countTotal;
+
         const cardsContainer = document.getElementById("cardsContainer");
         const newCard = document.createElement("div");
-        //     "id": 1,
-        // "title": "Fix navigation menu on mobile devices",
-        // "description": "The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.",
-        // "status": "open",
-        // "labels": [
-        // "bug",
-        // "help wanted"
-        // ],
-        // "priority": "high",
-        // "author": "john_doe",
-        // "assignee": "jane_smith",
-        // "createdAt": "2024-01-15T10:30:00Z",
-        // "updatedAt": "2024-01-15T10:30:00Z"
-        // 
         newCard.innerHTML = `
     
     <div class="bg-white ${data.status === "open" ? "openBorder" : "closedBorder"}
@@ -82,6 +70,7 @@ const allTabsData = (datas) => {
       </div>
 
     `;
+
         cardsContainer.appendChild(newCard);
     }
 
@@ -121,4 +110,114 @@ const bugsSpan = arr.map(el => {
 return bugsSpan;
 }
 
+
 loadData()
+
+
+const filterTabs = (id) => {
+
+const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+    fetch(url)
+        .then(ok => ok.json())
+        .then(data => {
+        statusFunction(data.data)
+        })
+
+const statusFunction = (stutus) => {
+
+    for (const sta of stutus) {
+        if (sta.status == id) {
+
+            const countTotal = document.getElementById("cardsContainer").children.length +1;
+        document.getElementById("count").innerText = countTotal;
+
+        const cardsContainer = document.getElementById("cardsContainer");
+        const newCard = document.createElement("div");
+        newCard.innerHTML = `
+    
+    <div class="bg-white ${sta.status === "open" ? "openBorder" : "closedBorder"}
+    
+    rounded-sm py-4 flex flex-col gap-3 h-full ">
+
+
+
+        <div class="px-4 flex justify-between items-center">
+
+        <img id="status" class="h-full w-10" src="./assets/${sta.status === "open" ? "Open-Status.png" : "Closed-Status.png"}" alt="">
+
+        <span 
+        
+        class="uppercase px-6 py-2.5 rounded-[100px] text-[14px]
+            ${sta.priority === "medium" ? "bg-[#FFF6D1] text-[#F59E0B]"
+
+                : sta.priority === "low" ? "bg-[#EEEFF2] text-[#9CA3AF]"
+
+                    : "bg-[#FEECEC] text-[#EF4444]"}
+        "> 
+
+        ${sta.priority}
+
+        </span>
+        </div>
+
+
+        <div class="px-4">
+          <h4 class="text-[18px] font-semibold pb-1">${sta.title}</h4>
+
+          <p class="text-[#64748B] text-[14px]">${sta.description}</p>
+        </div>
+
+
+        <div id="bugsContainer-${sta.id}" class="px-4 flex flex-wrap gap-2 pb-4 borderhr">
+
+        ${tagForBugs(sta.labels)}
+
+        </div>
+
+
+        <div class="px-4">
+          <p class="text-[#64748B] text-[14px]">#${sta.id}by ${sta.author}</p>
+
+          <p class="text-[#64748B] text-[14px]">${sta.createdAt.split("T")[0]}</p>
+        </div>
+
+
+
+      </div>
+
+    `;
+
+        cardsContainer.appendChild(newCard);
+
+
+        }
+        
+    }
+
+}
+
+}
+
+
+
+
+document.getElementById("open").addEventListener("click", () => {
+const cardsContainer = document.getElementById("cardsContainer");
+cardsContainer.innerHTML = "";
+
+filterTabs("open")
+})
+
+document.getElementById("closed").addEventListener("click", () => {
+const cardsContainer = document.getElementById("cardsContainer");
+cardsContainer.innerHTML = "";
+
+filterTabs("closed")
+})
+
+document.getElementById("allContent").addEventListener("click", () => {
+const cardsContainer = document.getElementById("cardsContainer");
+cardsContainer.innerHTML = "";
+
+loadData()
+})

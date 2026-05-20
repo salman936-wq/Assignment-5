@@ -94,17 +94,17 @@
     <!-- name of each tab group should be unique -->
     <div class="tabs tabs-box w-full md:w-10/14 mx-auto px-6 py-6 bg-white gap-2 flex flex-col md:flex-row shadow">
 
-      <input type="radio" name="my_tabs_1"
+      <input id="allContent" type="radio" name="my_tabs_1"
         class="tab [--tab-bg:#4A00FF] checked:text-white w-full md:w-[120px] cBorder checked:border-transparent!"
         aria-label="All" checked="checked" />
 
 
-      <input type="radio" name="my_tabs_1"
+      <input id="open" type="radio" name="my_tabs_1"
         class="tab [--tab-bg:#4A00FF] checked:text-white w-full md:w-[120px] cBorder checked:border-transparent!"
         aria-label="Open" />
 
 
-      <input type="radio" name="my_tabs_1"
+      <input id="closed" type="radio" name="my_tabs_1"
         class="tab [--tab-bg:#4A00FF] checked:text-white w-full md:w-[120px] cBorder checked:border-transparent!"
         aria-label="Closed" />
     </div>
@@ -118,7 +118,7 @@
       <div class="flex gap-3 md:flex-row items-center">
         <img class="md:w-[50px] w-[25%] rounded-full p-2 bg-[#ECE4FF]" src="./assets/Aperture.png" alt="">
         <div>
-          <p class="font-semibold text-[20px] text-[#1F2937]">50 Issues</p>
+          <p class="font-semibold text-[20px] text-[#1F2937]"><span id="count">0</span> Issues</p>
           <p class="text-[16px] text-[#64748B]">Track and manage your project issues</p>
         </div>
       </div>
@@ -144,7 +144,7 @@
 
   </section>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
