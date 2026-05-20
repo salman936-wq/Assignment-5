@@ -27,6 +27,7 @@ const allTabsData = (datas) => {
         // "assignee": "jane_smith",
         // "createdAt": "2024-01-15T10:30:00Z",
         // "updatedAt": "2024-01-15T10:30:00Z"
+        // 
         newCard.innerHTML = `
     
     <div class="bg-white ${data.status === "open" ? "openBorder" : "closedBorder"}
