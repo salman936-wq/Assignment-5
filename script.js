@@ -290,3 +290,95 @@ cardsContainer.innerHTML = "";
 
 loadData()
 })
+
+document.getElementById("search").addEventListener("input", (e) => {
+
+    const value = e.target.value.toLowerCase();
+
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues`;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(result => {
+
+            const matchedData = result.data.filter(data =>
+                data.title.toLowerCase().includes(value)
+            );
+
+            searchResultShow(matchedData);
+
+        });
+
+});
+
+const searchResultShow = (datas) => {
+
+    const cardsContainerSearch = document.getElementById("cardsContainer");
+
+    // আগের result remove
+    cardsContainerSearch.innerHTML = "";
+
+    // নতুন result loop
+    datas.forEach(data => {
+
+        const newCard = document.createElement("div");
+
+        newCard.innerHTML = `
+    
+    <div id="cards-${data.id}" onclick="cardOpener(${data.id})" class="bg-white ${data.status === "open" ? "openBorder" : "closedBorder"}
+    
+    rounded-sm py-4 flex flex-col gap-3 h-full ">
+
+
+
+        <div class="px-4 flex justify-between items-center">
+
+        <img id="status" class="h-full w-10" src="./assets/${data.status === "open" ? "Open-Status.png" : "Closed-Status.png"}" alt="">
+
+        <span 
+        
+        class="uppercase px-6 py-2.5 rounded-[100px] text-[14px]
+            ${data.priority === "medium" ? "bg-[#FFF6D1] text-[#F59E0B]"
+
+                : data.priority === "low" ? "bg-[#EEEFF2] text-[#9CA3AF]"
+
+                    : "bg-[#FEECEC] text-[#EF4444]"}
+        "> 
+
+        ${data.priority}
+
+        </span>
+        </div>
+
+
+        <div class="px-4">
+          <h4 class="text-[18px] font-semibold pb-1">${data.title}</h4>
+
+          <p class="text-[#64748B] text-[14px]">${data.description}</p>
+        </div>
+
+
+        <div id="bugsContainer-${data.id}" class="px-4 flex flex-wrap gap-2 pb-4 borderhr">
+
+        ${tagForBugs(data.labels)}
+
+        </div>
+
+
+        <div class="px-4">
+          <p class="text-[#64748B] text-[14px]">#${data.id}by ${data.author}</p>
+
+          <p class="text-[#64748B] text-[14px]">${data.createdAt.split("T")[0]}</p>
+        </div>
+
+
+
+      </div>
+
+    `;
+
+        cardsContainerSearch.appendChild(newCard);
+
+    });
+
+};
