@@ -1,3 +1,4 @@
+// This is main data
 const loadData = () => {
 
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
@@ -9,6 +10,7 @@ const loadData = () => {
 
 }
 
+// This is a by defult showing datas
 const allTabsData = (datas) => {
 
     for (data of datas) {
@@ -76,6 +78,7 @@ const allTabsData = (datas) => {
 
 }
 
+// This is a tag input forEach labels array to a span tag with map function
 const tagForBugs = (arr) => {
 const bugsSpan = arr.map(el => {
   let style = "";
@@ -110,10 +113,11 @@ const bugsSpan = arr.map(el => {
 return bugsSpan;
 }
 
-
+// This is by defult auto caling function
 loadData()
 
 
+// This is filter the tab function "this was only need a id and he is a back id's data"
 const filterTabs = (id) => {
 
 const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
@@ -198,6 +202,7 @@ const statusFunction = (stutus) => {
 
 }
 
+// This formet name from "chatgpt" any peragraph sand and this is back First letter uppercase and all lowercase like this = helLo iM SaLman > Hello Im Salman
 const formatName = (name) => {
   return name
     .split("_")
@@ -205,6 +210,7 @@ const formatName = (name) => {
     .join(" ");
 };
 
+// Popup open and show popup all of the content module
 const cardOpener = (id) => {
     my_modal_5.showModal()
     const myModalFive = document.getElementById("my_modal_5");
@@ -270,27 +276,33 @@ const cardOpener = (id) => {
     
 }
 
+
+
+// This is tabs by filter card er oneclick funtion
 document.getElementById("open").addEventListener("click", () => {
 const cardsContainer = document.getElementById("cardsContainer");
 cardsContainer.innerHTML = "";
 
 filterTabs("open")
 })
-
+// 
 document.getElementById("closed").addEventListener("click", () => {
 const cardsContainer = document.getElementById("cardsContainer");
 cardsContainer.innerHTML = "";
 
 filterTabs("closed")
 })
-
+// 
 document.getElementById("allContent").addEventListener("click", () => {
 const cardsContainer = document.getElementById("cardsContainer");
 cardsContainer.innerHTML = "";
 
 loadData()
 })
+// This is tabs by filter card er oneclick funtion
 
+
+// This is for search result
 document.getElementById("search").addEventListener("input", (e) => {
 
     const value = e.target.value.toLowerCase();
@@ -310,7 +322,7 @@ document.getElementById("search").addEventListener("input", (e) => {
         });
 
 });
-
+// 
 const searchResultShow = (datas) => {
 
     const cardsContainerSearch = document.getElementById("cardsContainer");
@@ -382,3 +394,4 @@ const searchResultShow = (datas) => {
     });
 
 };
+// This is for search result
